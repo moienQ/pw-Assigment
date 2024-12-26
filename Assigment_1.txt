@@ -1,0 +1,148 @@
+Assignment
+
+
+1. Difference between JVM, JRE, and JDK ?
+Answer:
+
+JVM (Java Virtual Machine):
+It is an abstract machine that provides a runtime environment to execute Java bytecode.
+Converts bytecode into machine-specific code.
+Ensures Java's platform independence and manages system memory and resources.
+
+JRE (Java Runtime Environment):
+It is a set of software tools that enables the execution of Java programs.
+Includes the JVM, libraries, and other components necessary for running Java applications.
+Does not contain development tools like a compiler or debugger.
+
+
+JDK (Java Development Kit):
+It is a full software development kit for Java programming.
+Includes JRE along with tools like the Java compiler (javac), debugger, and other utilities
+ for developing Java programs.
+
+
+
+
+
+2. How is Java machine and platform-independent?
+Answer:
+Java achieves platform independence by compiling source code into bytecode using the Java compiler.
+The bytecode is not specific to any processor; instead, it is interpreted or compiled to machine 
+code by the JVM, which is platform-specific.
+This means you can write a Java program once and run it anywhere a compatible JVM is available,
+ making Java platform-independent.
+
+
+
+
+
+3. How are Java programs executed by the JVM?
+Answer:
+
+Compilation:
+Source code (.java file) is compiled into bytecode (.class file) by the Java compiler.
+
+Class Loader:
+JVM’s Class Loader loads the .class files into memory.
+
+Bytecode Verification:
+Verifies the bytecode for illegal code that could violate access rights or compromise security.
+
+Execution:
+JVM’s interpreter or the JIT (Just-in-Time) compiler converts the bytecode into machine code.
+The machine code is executed on the underlying hardware.
+
+
+
+
+
+4. What is the use of varargs?
+Answer:
+Varargs (Variable Arguments):
+Introduced in Java 5 (... syntax), varargs allow a method to accept a variable number of arguments.
+
+
+Example:
+java
+Copy code
+public static void printNumbers(int... numbers) {
+    for (int num : numbers) {
+        System.out.println(num);
+    }
+}
+printNumbers(1, 2, 3);  // Output: 1 2 3
+Useful for methods where the number of parameters is not fixed.
+
+
+
+5. What are the types of variables in Java?
+Answer:
+Java has three types of variables:
+
+Local Variables:
+Declared inside a method, constructor, or block.
+Scope is limited to the block in which they are defined.
+
+Instance Variables:
+Declared inside a class but outside any method, constructor, or block.
+Belong to an instance of the class and are not shared among instances.
+
+
+Static Variables:
+Declared with the static keyword.
+Shared among all instances of the class.
+Belong to the class rather than any specific instance.
+
+
+
+
+6. How many types of memory areas are allocated by JVM?
+Answer:
+JVM allocates the following memory areas:
+
+Method Area:
+Stores class-level data, such as runtime constant pool, field, and method data.
+
+Heap:
+Stores objects and instance variables. It is shared across threads.
+
+Stack:
+Each thread has its own stack, storing method call frames and local variables.
+
+PC (Program Counter) Register:
+Keeps track of the address of the currently executing instruction.
+Native Method Stack:
+
+Used for native (non-Java) method calls.
+
+
+
+
+
+7. What is the Just-In-Time (JIT) Compiler in detail?
+Answer:
+
+
+JIT Compiler:
+Part of the JVM that improves the performance of Java applications.
+Converts bytecode into native machine code at runtime for faster execution.
+Eliminates the need for the interpreter to repeatedly interpret bytecode instructions.
+
+How it works:
+The JIT compiler compiles the frequently executed parts of the bytecode into native code.
+These compiled parts are cached and reused for subsequent executions.
+
+Advantages:
+Improves application performance.
+Optimizes code by removing redundant calculations and performing inlining.
+
+
+#Types of Optimization Techniques:
+
+Inlining: 
+Embeds frequently called methods into the calling method.
+
+Loop Unrolling:
+ Optimizes loops for better performance.
+Dead Code Elimination:
+ Removes code that is never executed.
